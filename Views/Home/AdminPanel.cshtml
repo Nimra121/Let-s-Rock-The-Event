@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "AdminPanel";
+}
+
+<h1>Admin Panel</h1>
+
+<h2>Events Management</h2>
+@Html.ActionLink("Manage Events", "Index", "Events", new { area = "" }, null)
+
+<h2>Services Management</h2>
+@Html.ActionLink("Manage Services", "Index", "Services", new { area = "" }, null)
+
+<h2>Feedback Management</h2>
+@Html.ActionLink("Manage Feedbacks", "Index", "Feedbacks", new { area = "" }, null)
+
+<h2>Reservation Management</h2>
+@Html.ActionLink("Manage Reservations", "Index", "Reservations", new { area = "" }, null)
+
+
+
+<!--jQuery-->
+<script src="~/assets/js/jquery-3.3.1.js"></script>
+<!--Plugins-->
+<script src="~/assets/js/bootstrap.bundle.js"></script>
+<script src="~/assets/js/loaders.css.js"></script>
+<script src="~/assets/js/aos.js"></script>
+<script src="~/assets/js/swiper.min.js"></script>
+<script src="~/assets/js/lightgallery-all.min.js"></script>
+<!--Template Script-->
+<script src="~/assets/js/main.js"></script>

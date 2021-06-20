@@ -1,0 +1,68 @@
+﻿@model Project.Models.ChangePasswordBindingModel
+
+@{
+    ViewBag.Title = "EditProfile";
+}
+
+
+<div class="form-horizontal container-fluid" style="align-content: center;color: white; background-image: url(http://evento.com.pk/wp-content/uploads/2016/08/img1-1.jpg);background-position: center;
+        background-repeat: no-repeat;background-attachment: scroll;background-size: cover; color: white; width:100%; height: 100%">
+    <h1>EDIT PROFILE</h1>
+        <hr />
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.OldPassword, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="password" id="oldpass" class="form-control" />
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NewPassword, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="password" id="newpass" class="form-control" />
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ConfirmPassword, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="password" id="confirmpass" class="form-control" />
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input id="submit" type="button" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+
+    <script src='https://code.jquery.com/jquery-3.1.0.min.js'></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#submit').click(function () {
+
+                $.ajax({
+                    url: 'http://localhost:50008/api/Account/ChangePassword',
+                    method: 'POST',
+                    headers: {
+                        'Authorization': 'Bearer ' + sessionStorage.getItem('accessToken')
+                    },
+                    data: {
+                        OldPassword: $('#oldpass').val(),
+                        NewPassword: $('#newpass').val(),
+                        ConfirmPassword: $('#confirmpass').val()
+                    },
+                    success: function () {
+                        window.location.href = 'Profile';
+                    }
+                });
+            });
+        });
+
+    </script>
+
