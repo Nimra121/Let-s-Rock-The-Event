@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Project.Models.Service>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<style>
+    body {
+        background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(/images/pic-2.jpg);
+        color:white;
+    }
+</style>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.service_type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.service_description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.service_image)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.service_type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.service_description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.service_image)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.serviceId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.serviceId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.serviceId })
+            </td>
+        </tr>
+
+    }
+
+</table>
+
+
+<!--jQuery-->
+<script src="~/assets/js/jquery-3.3.1.js"></script>
+<!--Plugins-->
+<script src="~/assets/js/bootstrap.bundle.js"></script>
+<script src="~/assets/js/loaders.css.js"></script>
+<script src="~/assets/js/aos.js"></script>
+<script src="~/assets/js/swiper.min.js"></script>
+<script src="~/assets/js/lightgallery-all.min.js"></script>
+<!--Template Script-->
+<script src="~/assets/js/main.js"></script>
