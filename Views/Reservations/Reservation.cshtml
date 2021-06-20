@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewBag.Title = "Reservation";
+}
+
+<style>
+    body {
+        background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(/images/pic-2.jpg);
+        color: white;
+        
+    }
+
+    
+</style>
+
+<div id="reservationcontainer" class="container text-center single-pricing center">
+    <h1>MAKE A RESERVATION</h1>
+    <div>
+        <h6>Reservation Date:</h6>
+        <input style="width:50%; margin:auto" type="date" class="form-control" id="reservationdate" />
+    </div>
+    <br />
+    <div>
+        <h6>Reservation Time:</h6>
+        <input style="width:50%; margin:auto" type="time" class="form-control" id="reservationtime" />
+    </div>
+    <br />
+    <div class="dropdown">
+        <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown">
+            Select Event Type
+        </button>
+        <div class="dropdown-menu">
+            <a class="dropdown-item">Wedding</a>
+            <a class="dropdown-item">Corporate</a>
+            <a class="dropdown-item">Birthday</a>
+            <a class="dropdown-item">Catering</a>
+        </div>
+    </div>
+    <br />
+    <div class="dropdown">
+        <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown">
+            Select Payment Method
+        </button>
+        <div class="dropdown-menu">
+            <a class="dropdown-item">Through Cash</a>
+            <a class="dropdown-item">EasyPaisa</a>
+            <a class="dropdown-item">JazzCash</a>
+            <a class="dropdown-item">BankAccount</a>
+        </div>
+    </div>
+    <br />    <br />    <br />
+    <input type="submit" value="Reserve" class="btn btn-primary" />
+
+</div>
+    
+    
+
+
+
+<!--jQuery-->
+<script src="~/assets/js/jquery-3.3.1.js"></script>
+<!--Plugins-->
+<script src="~/assets/js/bootstrap.bundle.js"></script>
+<script src="~/assets/js/loaders.css.js"></script>
+<script src="~/assets/js/aos.js"></script>
+<script src="~/assets/js/swiper.min.js"></script>
+<script src="~/assets/js/lightgallery-all.min.js"></script>
+<!--Template Script-->
+<script src="~/assets/js/main.js"></script>
